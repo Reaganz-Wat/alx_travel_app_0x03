@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from alx_travel_app_0x00.alx_travel_app_0x00.listings.models import Listing, Booking, Review
+from alx_travel_app.listings.models import Listing, Booking, Review
 
 
 class ListingSerializer(serializers.ModelSerializer):
