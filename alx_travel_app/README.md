@@ -15,8 +15,8 @@ This Django-based travel application provides a platform for managing property l
 ## Project Structure
 
 ```
-alx_travel_app_0x00/
-├── alx_travel_app_0x00/
+alx_travel_app/
+├── alx_travel_app/
 │   ├── listings/
 │   │   ├── models.py              # Database models
 │   │   ├── serializers.py         # API serializers
@@ -66,7 +66,7 @@ The project includes serializers for:
 1. **Clone the repository:**
    ```bash
    git clone <repository-url>
-   cd alx_travel_app_0x00
+   cd alx_travel_app
    ```
 
 2. **Set up virtual environment:**
@@ -182,7 +182,7 @@ The seeding functionality has been tested and verified to work correctly. The sc
 
 ## Repository Information
 
-- **GitHub Repository**: `alx_travel_app_0x00`
+- **GitHub Repository**: `alx_travel_app`
 - **Directory**: `alx_travel_app`
 - **Key Files**: 
   - `listings/models.py`
