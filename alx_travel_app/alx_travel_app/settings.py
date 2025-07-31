@@ -56,7 +56,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'alx_travel_app.listings',  # listing is the app on the project
+    'listings',  # listing is the app on the project
     'rest_framework',
     'corsheaders',
     'drf_yasg',
