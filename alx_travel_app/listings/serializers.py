@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from listings.models import Listing, Booking, Review
+from listings.models import Listing, Booking, Review, Payment
 
 
 class ListingSerializer(serializers.ModelSerializer):
@@ -16,3 +16,8 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = '__all__'
+        
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = "__all__"

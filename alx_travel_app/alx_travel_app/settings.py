@@ -93,6 +93,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alx_travel_app.wsgi.application'
 
+CHAPA_SECRET_KEY = os.getenv("CHAPA_SECRET_KEY")
+CHAPA_BASE_URL = os.getenv("CHAPA_BASE_URL", "https://api.chapa.co/v1/transaction")
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
