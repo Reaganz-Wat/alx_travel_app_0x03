@@ -156,3 +156,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# Celery Configuration
+CELERY_BROKER_URL = "amqp://guest:guest@localhost//"  # RabbitMQ
+CELERY_RESULT_BACKEND = "rpc://"
+
+# Email Backend (using console for dev)
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+DEFAULT_FROM_EMAIL = "no-reply@alxtravel.com"

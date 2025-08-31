@@ -6,6 +6,7 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from .models import Listing, Booking, Payment
 from .serializers import ListingSerializer, BookingSerializer, PaymentSerializer
+from .tasks import send_booking_confirmation_email
 
 # Create your views here.
 class ListingViewsets(viewsets.ModelViewSet):
@@ -15,6 +16,14 @@ class ListingViewsets(viewsets.ModelViewSet):
 class BookingViewsets(viewsets.ModelViewSet):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+    
+    def perform_create(self, serializer):
+        booking = serializer.save()
+        
+        print(f"Bookings here: {booking}")
+        
+        # Trigger async email
+        send_booking_confirmation_email.delay("reaganwatmon6@gmail.com", booking.id)
     
 class PaymentViewSet(viewsets.ModelViewSet):
     queryset = Payment.objects.all()
