@@ -163,6 +163,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CELERY_BROKER_URL = "amqp://guest:guest@localhost//"  # RabbitMQ
 CELERY_RESULT_BACKEND = "rpc://"
 
-# Email Backend (using console for dev)
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-DEFAULT_FROM_EMAIL = "no-reply@alxtravel.com"
+
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_PORT = env('EMAIL_PORT')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS', default=True)
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+# ✅ Debug prints to verify environment variables
+# print("EMAIL_HOST:", EMAIL_HOST)
+# print("EMAIL_PORT:", EMAIL_PORT)
+# print("EMAIL_USE_TLS:", EMAIL_USE_TLS)
+# print("EMAIL_HOST_USER:", EMAIL_HOST_USER)
+# print("EMAIL_HOST_PASSWORD:", EMAIL_HOST_PASSWORD)
