@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand
 
 # Since the app is registered as 'listings', try direct import
 try:
-    from alx_travel_app_0x00.listings.models import Listing, Booking, Review
+    from alx_travel_app_0x03.listings.models import Listing, Booking, Review
 except ImportError:
     # Fallback to app registry method
     from django.apps import apps
